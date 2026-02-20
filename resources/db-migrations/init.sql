@@ -1,0 +1,14 @@
+DROP TABLE IF EXISTS users;
+
+
+CREATE TABLE users(
+    id INT NOT NULL AUTO_INCREMENT,
+    first_name VARCHAR(255) NOT NULL DEFAULT "",
+    last_name VARCHAR(255) NOT NULL DEFAULT "",
+    email VARCHAR(255) NOT NULL UNIQUE,
+    age INT NOT NULL,
+    address VARCHAR(255),
+    join_date DATE DEFAULT CURRENT_DATE,
+    is_registered BOOL DEFAULT FALSE,
+    PRIMARY KEY (id)
+);

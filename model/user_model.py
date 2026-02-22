@@ -11,6 +11,7 @@ class User(BaseModel):
     age: int
     join_date: Optional[date] = None
     address: str
+    is_registered: bool
 
     # id INT NOT NULL AUTO_INCREMENT,
     # first_name VARCHAR(255) NOT NULL DEFAULT "",

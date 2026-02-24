@@ -12,6 +12,13 @@ router = APIRouter(
     tags=["user"],
 )
 
+@router.get("/", status_code=status.HTTP_200_OK)
+async def get_users() -> Optional[List[User]]:
+    try:
+        return await user_service.get_users()
+    except Exception as e:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(e))
+
 @router.post("/", status_code=status.HTTP_201_CREATED)
 async def create_user(user: User) :
     try:
@@ -26,7 +33,7 @@ async def read_users(user_id: int) -> Optional[User] :
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
     return user
 
-@router.put("/{user_id}", status_code=status.HTTP_202_ACCEPTED)
+@router.put("/user_id/{user_id}", status_code=status.HTTP_202_ACCEPTED)
 async def update_user(user: User) -> User:
     try:
         await user_service.update_user(user)

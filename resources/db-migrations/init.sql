@@ -8,7 +8,7 @@ CREATE TABLE users(
     email VARCHAR(255) NOT NULL UNIQUE,
     age INT NOT NULL,
     address VARCHAR(255),
-    join_date DATE DEFAULT CURRENT_DATE,
+    join_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     is_registered BOOL DEFAULT FALSE,
     PRIMARY KEY (id)
 );

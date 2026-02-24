@@ -4,6 +4,11 @@ import json
 from repository.database import database
 from model.user_model import User
 
+async def get_users()->List[User]:
+    query = """
+        SELECT * FROM users
+    """
+    return await database.fetch_all(query)
 
 async def create_user(user : User) :
     query = """

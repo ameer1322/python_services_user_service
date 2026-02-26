@@ -1,7 +1,6 @@
 from typing import Optional, List
 
 from fastapi import APIRouter, HTTPException
-from sqlalchemy.sql.functions import user
 from starlette import status
 
 from model.user_model import User

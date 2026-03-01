@@ -21,3 +21,10 @@ async def delete_user(user_id: int) -> User:
 async def update_user(user: User) -> User:
     return await user_repository.update_user(user)
 
+
+async def register_user(user_id):
+    return await user_repository.register_user(user_id)
+
+
+async def is_registered(user_id):
+    return await user_repository.is_registered(user_id)

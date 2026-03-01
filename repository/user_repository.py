@@ -75,3 +75,30 @@ async def update_user(user: User) -> User:
         await database.execute(query, values=values)
         return user
 
+
+async def register_user(user_id):
+    query = """
+    UPDATE users
+    SET is_registered = TRUE
+    WHERE id = :user_id
+    """
+    values = {
+        "user_id": user_id
+    }
+    async with database.transaction():
+        await database.execute(query,values=values)
+        return
+
+
+async def is_registered(user_id):
+    query = """
+    SELECT is_registered
+    FROM users
+    WHERE id = :user_id"""
+    values={
+        "user_id":user_id
+    }
+    result = await database.fetch_one(query,values=values)
+    if not result:
+        raise ValueError("User not found")
+    return bool(result["is_registered"])

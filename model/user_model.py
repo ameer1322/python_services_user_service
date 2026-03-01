@@ -1,17 +1,17 @@
-from datetime import date
+from datetime import datetime
 from typing import Optional
 
 from pydantic import BaseModel
 
 class User(BaseModel):
-    id: Optional[int]
+    id: Optional[int] = None
     first_name: str
     last_name: str
     email: str
     age: int
-    join_date: Optional[date] = None
+    join_date: Optional[datetime] = None
     address: str
-    is_registered: bool
+    is_registered: bool = False
 
     # id INT NOT NULL AUTO_INCREMENT,
     # first_name VARCHAR(255) NOT NULL DEFAULT "",

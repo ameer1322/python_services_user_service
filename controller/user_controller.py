@@ -18,21 +18,28 @@ async def get_users() -> Optional[List[User]]:
     except Exception as e:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(e))
 
+@router.get("/is_registered/{user_id}",status_code=status.HTTP_200_OK)
+async def is_registered(user_id:int) -> bool:
+    try:
+        return await user_service.is_registered(user_id)
+    except Exception as e:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,detail=str(e))
+
 @router.post("/", status_code=status.HTTP_201_CREATED)
-async def create_user(user: User) :
+async def create_user(user: User):
     try:
         await user_service.create_user(user)
     except Exception as e:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(e))
 
-@router.get("/user_id/{user_id}", status_code=status.HTTP_200_OK)
+@router.get("/{user_id}", status_code=status.HTTP_200_OK)
 async def read_users(user_id: int) -> Optional[User] :
     user = await user_service.get_user_by_id(user_id)
     if not user:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
     return user
 
-@router.put("/user_id/{user_id}", status_code=status.HTTP_202_ACCEPTED)
+@router.put("/{user_id}", status_code=status.HTTP_202_ACCEPTED)
 async def update_user(user: User) -> User:
     try:
         await user_service.update_user(user)
@@ -48,3 +55,10 @@ async def delete_user(user_id: int) -> User:
     except Exception as e:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(e))
 
+@router.put("/register_user/{user_id}",status_code=status.HTTP_200_OK)
+async def register_user(user_id:int):
+    try:
+        await user_service.register_user(user_id)
+        return
+    except Exception as e:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST)

@@ -20,6 +20,7 @@ async def answer_question(request : AnswerRequest):
     try:
         return await answer_service.answer_question(request)
     except Exception as e:
+        print(e)
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,detail=str(e))
 
 @router.put("/",status_code=status.HTTP_200_OK)

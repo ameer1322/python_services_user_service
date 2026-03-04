@@ -33,16 +33,16 @@ async def create_user(user: User):
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(e))
 
 @router.get("/{user_id}", status_code=status.HTTP_200_OK)
-async def read_users(user_id: int) -> Optional[User] :
+async def get_user(user_id: int) -> Optional[User] :
     user = await user_service.get_user_by_id(user_id)
     if not user:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
     return user
 
 @router.put("/{user_id}", status_code=status.HTTP_202_ACCEPTED)
-async def update_user(user: User) -> User:
+async def update_user(user: User, user_id:int) -> User:
     try:
-        await user_service.update_user(user)
+        await user_service.update_user(user,user_id)
         return user
     except Exception as e:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(e))

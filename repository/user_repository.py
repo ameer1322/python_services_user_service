@@ -53,27 +53,26 @@ async def delete_user(user_id: int) -> User:
         await database.execute(query, values=values)
     return deleted_user
 
-async def update_user(user: User) -> User:
+async def update_user(user: User,user_id:int) -> User:
     query = """
     UPDATE users
     SET first_name = :first_name, 
-    last_name = :last_name, 
-    email = :email, 
-    age = :age, 
-    address = :address
+        last_name = :last_name, 
+        email = :email, 
+        age = :age, 
+        address = :address
     WHERE id = :id
     """
     values = {
-        "id": user.id,
+        "id": user_id,
         "first_name": user.first_name,
         "last_name": user.last_name,
         "email": user.email,
         "age": user.age,
         "address": user.address
     }
-    async with database.transaction():
-        await database.execute(query, values=values)
-        return user
+    await database.execute(query, values=values)
+    return user
 
 
 async def register_user(user_id):
@@ -99,6 +98,4 @@ async def is_registered(user_id):
         "user_id":user_id
     }
     result = await database.fetch_one(query,values=values)
-    if not result:
-        raise ValueError("User not found")
     return bool(result["is_registered"])

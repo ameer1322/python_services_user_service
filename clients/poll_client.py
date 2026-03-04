@@ -1,4 +1,5 @@
 from model.answer_request_model import AnswerRequest
+from model.delete_request_model import DeleteRequest
 from model.user_model import User
 
 import httpx
@@ -14,11 +15,11 @@ async def answer_question(request: AnswerRequest):
         response.raise_for_status()
         return response.json()
 
-async def update_answer(question_id:int, answer_id:int, user:User):
+async def update_answer(question_id:int, answer_id:int, user_id:int):
     async with httpx.AsyncClient() as client:
         response = await client.put(
-            f"{POLL_SERVICE_URL}/answer/update_question",
-            json={"question_id":question_id,"answer_id":answer_id,"user_id":user.id}
+            f"{POLL_SERVICE_URL}/answer/update_answer",
+            json={"question_id":question_id,"answer_id":answer_id,"user_id":user_id}
         )
         response.raise_for_status()
         return response.json()
@@ -35,6 +36,14 @@ async def check_user_answered(user_id:int, question_id:int):
     async with httpx.AsyncClient() as client:
         response = await client.get(
             f"{POLL_SERVICE_URL}/answer/check_user_answered/{user_id}/{question_id}"
+        )
+        response.raise_for_status()
+        return response.json()
+
+async def delete_answer(user_id:int, question_id:int):
+    async with httpx.AsyncClient() as client:
+        response = await client.delete(
+            f"{POLL_SERVICE_URL}/answer/delete_answer/user/{user_id}/question/{question_id}"
         )
         response.raise_for_status()
         return response.json()

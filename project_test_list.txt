@@ -38,7 +38,6 @@ Poll client:
 
 		get_question_by_user ✔️ ✔️
 
-		get_question_users_count
 
 	Answer_controller:
 
@@ -56,11 +55,15 @@ Poll client:
 
 		get get_users_answers/{user_id}
 
-		get get_users_answers_count/{user_id}
+		get get_user_answers_count/{user_id}
 
 		get get_all_questions_answers
 
 		get check_user_answered/{user_id}/{question_id}
+
+		get get_question_answered_count
+
+		get get_questions_answers_count
 		
 
 	

@@ -23,7 +23,7 @@ async def answer_question(request: AnswerRequest):
 async def update_answer(question_id:int, answer_id:int, user_id:int):
     async with httpx.AsyncClient() as client:
         response = await client.put(
-            f"{POLL_SERVICE_URL}/answer/update_answer",
+            f"{POLL_SERVICE_URL}/answer/",
             json={"question_id":question_id,"answer_id":answer_id,"user_id":user_id}
         )
         return {

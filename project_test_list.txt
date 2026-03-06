@@ -2,41 +2,41 @@ User_service:
 
 	User_controller:
 
-		get users ✔️
+		get users ✔️ ✔️
 
-		create user ✔️
+		create user ✔️ ✔️
 
-		update user ✔️
+		update user ✔️ ✔️
 
-		delete user ✔️
+		delete user ✔️ ✔️
 
-		get is_registered ✔️
+		get is_registered ✔️ ✔️
 
-		get user ✔️
+		get user ✔️ ✔️
 
-		register_user ✔️
+		register_user ✔️ ✔️
 
 	Answer_controller:
 
-		answer_question
+		answer_question ✔️
 
-		update_answer
+		update_answer  ✔️
 
-		delete_answer
+		delete_answer  ✔️
 
 Poll client:
 
 	Question_controller:
 
-		get_questions ✔️
+		get_questions ✔️ ✔️
 
-		create_question ✔️
+		create_question ✔️ ✔️
 
-		get_question_by_id ✔️
+		get_question_by_id ✔️ ✔️
 
-		delete_question  ✔️
+		delete_question  ✔️ ✔️
 
-		get_question_by_user ✔️
+		get_question_by_user ✔️ ✔️
 
 		get_question_users_count
 

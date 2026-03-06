@@ -10,7 +10,7 @@ async def get_users()->List[User]:
     """
     return await database.fetch_all(query)
 
-async def create_user(user : User) :
+async def create_user(user : User) -> User :
     query = """
         INSERT INTO users (first_name, last_name, email, age, address) 
         VALUES (:first_name, :last_name, :email, :age, :address)
@@ -26,9 +26,8 @@ async def create_user(user : User) :
 
     async with database.transaction():
         await database.execute(query, values=values)
-        last_record_id = await database.fetch_one("SELECT LAST_INSERT_ID()")
 
-    return last_record_id[0]
+    return user
 
 async def get_user_by_id(user_id: int) -> Optional[User]:
     query = """
@@ -75,7 +74,7 @@ async def update_user(user: User,user_id:int) -> User:
     return user
 
 
-async def register_user(user_id):
+async def register_user(user_id) -> int:
     query = """
     UPDATE users
     SET is_registered = TRUE
@@ -86,7 +85,7 @@ async def register_user(user_id):
     }
     async with database.transaction():
         await database.execute(query,values=values)
-        return
+        return user_id
 
 
 async def is_registered(user_id):

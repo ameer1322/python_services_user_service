@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7a8796bb-eb46-4f6a-b073-49c88631fb5f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../python-services-poll-service/model/user_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python-services-poll-service/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../python-services-poll-service/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python-services-poll-service/config/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/../python-services-poll-service/config/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python-services-poll-service/controller/question_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/../python-services-poll-service/controller/question_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python-services-poll-service/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../python-services-poll-service/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python-services-poll-service/repository/question_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/../python-services-poll-service/repository/question_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python-services-poll-service/resources/db-migrations/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../python-services-poll-service/resources/db-migrations/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python-services-poll-service/service/question_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/../python-services-poll-service/service/question_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clients/poll_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/poll_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/user_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/user_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_test_list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project_test_list.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/repository/user_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/answer_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/answer_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/user_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/user_service.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="38sZRjjSUdObt9ALzSJizy9UMdh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Ameer/PycharmProjects/python-services-user-service/repository",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ameer\PycharmProjects\python-services-user-service\repository" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-4e2b1448bda8-9a97661f3031-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.27397.106" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7a8796bb-eb46-4f6a-b073-49c88631fb5f" name="Changes" comment="" />
+      <created>1769590233028</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1769590233028</updated>
+    </task>
+    <servers />
+  </component>
+</project>

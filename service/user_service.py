@@ -27,9 +27,14 @@ async def update_user(user: User, user_id:int) -> User:
         return await user_repository.update_user(user,user_id)
     raise ValueError("User doesn't exist.")
 
-async def register_user(user_id):
-    return await user_repository.register_user(user_id)
-
+async def register_user(user_id) -> int:
+    user_exists = await get_user_by_id(user_id)
+    if user_exists:
+        registered = await user_repository.is_registered(user_id)
+        if not registered:
+            return await user_repository.register_user(user_id)
+        raise ValueError("User already registered")
+    raise ValueError("User doesn't exist.")
 
 async def is_registered(user_id):
     user_exists = await get_user_by_id(user_id)

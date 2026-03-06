@@ -14,9 +14,12 @@ async def answer_question(request : AnswerRequest)-> Optional[int]:
     if not user:
         raise ValueError("User not found")
     if user.is_registered:
-        user_answered_check = await poll_client.check_user_answered(request.user_id, request.question_id)
-        if user_answered_check:
-            raise ValueError ("User already answered question, use update answer instead")
+        user_answered_response = await poll_client.check_user_answered(request.user_id, request.question_id)
+        print(user_answered_response)
+        if user_answered_response["status_code"] == 400:
+            raise ValueError (user_answered_response["data"])
+        if user_answered_response["data"]:
+            raise ValueError ("User already answered")
         else:
             if request.answer_id > 4 or request.answer_id < 0:
                 raise ValueError('answer_id must be between 1 and 4')

@@ -2,66 +2,64 @@ User_service:
 
 	User_controller:
 
-		get users ✔️ ✔️
+		get "/" returns all users ✔️ ✔️
 
-		create user ✔️ ✔️
+		post "/" creates user ✔️ ✔️
 
-		update user ✔️ ✔️
+		put "/{user_id}" updates user✔️ ✔️
 
-		delete user ✔️ ✔️
+		delete "/{user_id}" deletes user ✔️ ✔️
 
-		get is_registered ✔️ ✔️
+		get "/is_registered/{user_id}" returns if a user is registered ✔️ ✔️
 
-		get user ✔️ ✔️
+		get "/{user_id}" returns specific user by id✔️ ✔️
 
-		register_user ✔️ ✔️
+		put "/register_user/{user_id}" ✔️ ✔️
 
 	Answer_controller:
 
-		answer_question ✔️
+		post "/" answers question ✔️
 
-		update_answer  ✔️
+		put "/" updates answer ✔️
 
-		delete_answer  ✔️
+		delete "/user/{user_id}/question/{question_id}" deletes a specific answer ✔️
 
 Poll client:
 
 	Question_controller:
 
-		get_questions ✔️ ✔️
+		get "/" returns all questions ✔️ ✔️
 
-		create_question ✔️ ✔️
+		post "/" creates question ✔️ ✔️
 
-		get_question_by_id ✔️ ✔️
+		get "/{question_id}" returns question by id ✔️ ✔️
 
-		delete_question  ✔️ ✔️
+		delete "/{question_id}" deletes question ✔️ ✔️
 
-		get_question_by_user ✔️ ✔️
+		get "/get_questions_by_user/{user_id}"  returns all questions that user answered ✔️ ✔️
 
 
 	Answer_controller:
 
-		post answer ✔️
+		post "/" answers question ✔️
 	
-		put answer  ✔️
+		put "/" updates answer ✔️
 
-		delete delete_answer/user/{user_id}/question/{question_id} ✔️
+		delete "/delete_user_answers/{user_id}" deletes all answers of user
 
-		get get_answers_by_user/{user_id}  ✔️
+		delete "/delete_answer/user/{user_id}/question/{question_id}" deletes answer ✔️
 
-		get get_question_users_answers/{user_id}
+		get "get_user_answers/{user_id}"  returns all user answers ✔️
 
-		get get_users_answers/{user_id}
+		get "get_user_answers_count/{user_id}" returns how many questions user answered ✔️
 
-		get get_user_answers_count/{user_id}
+		get "get_all_questions_answers" returns all questions, their answers and how many users choose each answer ✔️
 
-		get get_all_questions_answers
+		get "check_user_answered/{user_id}/{question_id}" returns if user answered question ✔️
 
-		get check_user_answered/{user_id}/{question_id}
+		get "get_question_answered_count/{question_id}" returns how many users answered ✔️
 
-		get get_question_answered_count
-
-		get get_questions_answers_count
+		get "get_questions_answers_count/{question_id}" returns how many users choose each of the questions ✔️
 		
 
 	

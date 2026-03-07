@@ -41,15 +41,13 @@ Poll client:
 
 	Answer_controller:
 
-		post answer
+		post answer ✔️
 	
-		put answer
+		put answer  ✔️
 
-		delete delete_users_answers
+		delete delete_answer/user/{user_id}/question/{question_id} ✔️
 
-		delete delete_answer/user/{user_id}/question/{question_id}
-
-		get get_answers_by_user/{user_id}
+		get get_answers_by_user/{user_id}  ✔️
 
 		get get_question_users_answers/{user_id}
 

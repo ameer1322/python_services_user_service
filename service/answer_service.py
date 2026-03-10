@@ -21,7 +21,7 @@ async def answer_question(request : AnswerRequest)-> Optional[int]:
         if user_answered_response["data"]:
             raise ValueError ("User already answered")
         else:
-            if request.answer_id > 4 or request.answer_id < 0:
+            if request.answer_id > 4 or request.answer_id < 1:
                 raise ValueError('answer_id must be between 1 and 4')
             return await poll_client.answer_question(request)
     else:

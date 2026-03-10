@@ -1,12 +1,26 @@
-User_service:
+User_service (port:8000):
 
-	User_controller:
+	User_controller (prefix:/user):
 
 		get "/" returns all users ✔️ ✔️
 
 		post "/" creates user ✔️ ✔️
+		body:{
+		"first_name":str,
+		"last_name":str,
+		"email":str,
+		"address":str,
+		"age":int
+		}
 
 		put "/{user_id}" updates user✔️ ✔️
+        body:{
+		"first_name":str,
+		"last_name":str,
+		"email":str,
+		"address":str,
+		"age":int
+		}
 
 		delete "/{user_id}" deletes user ✔️ ✔️
 
@@ -14,52 +28,79 @@ User_service:
 
 		get "/{user_id}" returns specific user by id✔️ ✔️
 
-		put "/register_user/{user_id}" ✔️ ✔️
+		put "/register/{user_id}" ✔️ ✔️
 
-	Answer_controller:
+	Answer_controller (prefix:/answer):
 
 		post "/" answers question ✔️
+		body:{
+		"user_id":int,
+		"question_id":int,
+		"answer_id":int
+		}
 
 		put "/" updates answer ✔️
+        body:{
+		"user_id":int,
+		"question_id":int,
+		"answer_id":int
+		}
 
 		delete "/user/{user_id}/question/{question_id}" deletes a specific answer ✔️
 
-Poll client:
+Poll client (port:8001):
 
-	Question_controller:
+	Question_controller (prefix:/question):
 
 		get "/" returns all questions ✔️ ✔️
 
 		post "/" creates question ✔️ ✔️
+		body:{
+		"question":str,
+		"answer_a":str,
+		"answer_b":str,
+		"answer_c":str,
+		"answer_d":str
+		}
 
 		get "/{question_id}" returns question by id ✔️ ✔️
 
 		delete "/{question_id}" deletes question ✔️ ✔️
 
-		get "/get_questions_by_user/{user_id}"  returns all questions that user answered ✔️ ✔️
+		get "/questions_by_user/{user_id}"  returns all questions that user answered ✔️ ✔️
 
 
-	Answer_controller:
+	Answer_controller (prefix:/answer):
 
 		post "/" answers question ✔️
+		body:{
+		"user_id":int,
+		"question_id":int,
+		"answer_id":int
+		}
 	
 		put "/" updates answer ✔️
+		body:{
+		"user_id":int,
+		"question_id":int,
+		"answer_id":int
+		}
 
-		delete "/delete_user_answers/{user_id}" deletes all answers of user
+		delete "/user_answers/{user_id}" deletes all answers of user ✔️
 
-		delete "/delete_answer/user/{user_id}/question/{question_id}" deletes answer ✔️
+		delete "/user/{user_id}/question/{question_id}" deletes answer ✔️
 
-		get "get_user_answers/{user_id}"  returns all user answers ✔️
+		get "/user_answers/{user_id}"  returns all user answers ✔️
 
-		get "get_user_answers_count/{user_id}" returns how many questions user answered ✔️
+		get "/user_answers_count/{user_id}" returns how many questions user answered ✔️
 
-		get "get_all_questions_answers" returns all questions, their answers and how many users choose each answer ✔️
+		get "/all_questions_answers" returns all questions, their answers and how many users choose each answer ✔️
 
-		get "check_user_answered/{user_id}/{question_id}" returns if user answered question ✔️
+		get "/check_user_answered/{user_id}/{question_id}" returns if user answered question ✔️
 
-		get "get_question_answered_count/{question_id}" returns how many users answered ✔️
+		get "/question_answered_count/{question_id}" returns how many users answered ✔️
 
-		get "get_questions_answers_count/{question_id}" returns how many users choose each of the questions ✔️
+		get "/questions_answers_count/{question_id}" returns how many users choose each of the questions ✔️
 		
 
 	
